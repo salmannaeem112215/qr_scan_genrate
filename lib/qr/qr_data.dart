@@ -35,8 +35,8 @@ class QrData {
               : int.tryParse(json[width_]!) ?? 0,
       height: json[height_] == null
           ? 0
-          : json[width_].runtimeType == int
-              ? json[width_]!
+          : json[height_].runtimeType == int
+              ? json[height_]!
               : int.tryParse(json[height_]!) ?? 0,
     );
   }
