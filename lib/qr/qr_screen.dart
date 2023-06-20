@@ -9,7 +9,7 @@ class QrScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final QrController _qrController = Get.put(QrController());
+    final QrController qrController = Get.put(QrController());
 
     return Scaffold(
       body: SafeArea(
@@ -22,47 +22,47 @@ class QrScreen extends StatelessWidget {
                 children: [
                   Obx(
                     () => QrImageView(
-                      data: _qrController.qrValue.value,
+                      data: qrController.qrValue.value,
                       size: 200,
                     ),
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
                     keyboardType: TextInputType.name,
-                    controller: _qrController.name,
+                    controller: qrController.name,
                     decoration: kInputDecoration('Name'),
-                    onChanged: (val) => _qrController.valueChanges(),
+                    onChanged: (val) => qrController.valueChanges(),
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
                     keyboardType: TextInputType.text,
-                    controller: _qrController.address,
+                    controller: qrController.address,
                     decoration: kInputDecoration('Address'),
-                    onChanged: (val) => _qrController.valueChanges(),
+                    onChanged: (val) => qrController.valueChanges(),
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
                     // validator: (value) => ,
                     keyboardType: TextInputType.phone,
-                    controller: _qrController.pincode,
+                    controller: qrController.pincode,
                     decoration: kInputDecoration('PIN Code'),
-                    onChanged: (val) => _qrController.valueChanges(),
+                    onChanged: (val) => qrController.valueChanges(),
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
                     // validator: (value) => ,
                     keyboardType: TextInputType.number,
-                    controller: _qrController.height,
+                    controller: qrController.height,
                     decoration: kInputDecoration('Height'),
-                    onChanged: (val) => _qrController.valueChanges(),
+                    onChanged: (val) => qrController.valueChanges(),
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
                     // validator: (value) => ,
                     keyboardType: TextInputType.number,
-                    controller: _qrController.width,
+                    controller: qrController.width,
                     decoration: kInputDecoration('Width'),
-                    onChanged: (val) => _qrController.valueChanges(),
+                    onChanged: (val) => qrController.valueChanges(),
                   ),
                   const SizedBox(height: 30),
                   ElevatedButton(
@@ -71,7 +71,7 @@ class QrScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(16),
                       ),
                       onPressed: () {
-                        _qrController.scanQr();
+                        qrController.scanQr();
                       },
                       child: const Text(
                         'Scan Devices',
