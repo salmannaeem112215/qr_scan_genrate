@@ -48,6 +48,22 @@ class QrScreen extends StatelessWidget {
                     decoration: kInputDecoration('PIN Code'),
                     onChanged: (val) => _qrController.valueChanges(),
                   ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    // validator: (value) => ,
+                    keyboardType: TextInputType.number,
+                    controller: _qrController.height,
+                    decoration: kInputDecoration('Height'),
+                    onChanged: (val) => _qrController.valueChanges(),
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    // validator: (value) => ,
+                    keyboardType: TextInputType.number,
+                    controller: _qrController.width,
+                    decoration: kInputDecoration('Width'),
+                    onChanged: (val) => _qrController.valueChanges(),
+                  ),
                   const SizedBox(height: 30),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
